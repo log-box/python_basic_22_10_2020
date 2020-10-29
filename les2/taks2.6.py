@@ -20,3 +20,22 @@
 “ед”: [“шт.”]
 }
 """
+goods = []
+while input("Хотите добавить товар? Введите 1/0: ") == '1':
+    good_number = int(input("Введите номер товара: "))
+    properties = {}
+    while input("Хотите добавить параметр товара? Введите 1/0: ") == '1':
+        property_key = input("Введите название параметра продукта: ")
+        property_value = input("Введите значение параметра продукта: ")
+        properties[property_key] = property_value
+    goods.append(tuple([good_number, properties]))
+print(goods)
+#goods = [(1, {'name': 'comp', 'price': '11'}), (2, {'name': 'pri', 'price': '22'})]
+analitics = {}
+for good in goods:
+    for property_key, property_value in good[1].items():
+        if property_key in analitics:
+            analitics[property_key].append(property_value)
+        else:
+         analitics[property_key] = [property_value]
+print(analitics)
