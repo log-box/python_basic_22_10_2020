@@ -8,17 +8,17 @@
 """
 def my_func(x, y):#для любой степени
     count = 1
-    for i in range(abs(y)):
-        count *= x
+    for i in range(abs(y)): # Получаем модуль (положительное) степени
+        count *= x # уозвоздим в степень в цикле
     if y >= 0:
-        return count
+        return count # если положительная степень
     else:
-        return 1 / count
+        return 1 / count # делим если отрицательная степень
 
 def my_func1(x, y): #только для положительной степени
     if y == 0:
         return 1
-    return x / my_func(x, y-1)
+    return x * my_func(x, y-1) #рекурсивный вызов уможения (возведения в степень) и уменьшения множителя
 
 
 if __name__ == '__main__':
