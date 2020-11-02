@@ -4,7 +4,7 @@
 """
 
 
-def my_func(arg1: int, arg2: int, arg3: int):
+def my_func(arg1, arg2, arg3):
     if arg1 >= arg3 and arg2 >= arg3:
         print(arg1 + arg2)
         return arg1 + arg2
