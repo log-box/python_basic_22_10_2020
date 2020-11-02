@@ -9,15 +9,14 @@
 """
 
 
-
-
-
-
-
-
-
-
+def int_func(word):
+    word = word.title()
+    return word
 
 
 if __name__ == '__main__':
-    pass
+    result = ''
+    word = input('Введите строку разделенную пробелами: ').split(' ')
+    for i in word:
+        result = result + int_func(i) + ' '
+    print(result)
