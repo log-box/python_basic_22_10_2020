@@ -4,3 +4,12 @@
 Необходимо получить результат вычисления произведения всех элементов списка.
 Подсказка: использовать функцию reduce().
 """
+
+from functools import reduce
+
+
+def reduce_func(func, elm):
+    return func * elm
+
+print(f'Четные значения {[elm for elm in range(99, 1001) if elm % 2 == 0]}')
+print(f'Результат перемножения всех элементов списка {reduce(reduce_func, [elm for elm in range(99, 1001) if elm % 2 == 0])}')
