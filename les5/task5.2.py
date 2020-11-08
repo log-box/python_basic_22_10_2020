@@ -11,6 +11,6 @@ my_file = open('task5.2_file.txt', 'r')
 
 x = 1
 for line in my_file:
-    print(f'Количеыство слов в строке №{x} равно: {len(line.split())}')
+    print(f'Количество слов в строке №{x} равно: {len(line.split())}')
     x += 1
 my_file.close()

@@ -12,3 +12,23 @@
 
 {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 """
+
+tasks = {}
+
+with open('task5.6_file.txt', 'r') as file:
+    for line in file:
+        task, lection, practics, labs = line.split()
+        if lection != '—':
+            lection = lection.split('(')
+        else:
+            lection = [0,]
+        if practics != '—':
+            practics = practics.split('(')
+        else:
+            practics = [0,]
+        if labs != '—':
+            labs = labs.split('(')
+        else:
+            labs = [0,]
+        tasks[task] = int(lection[0]) + int(practics[0]) + int(labs[0])
+print(tasks)
