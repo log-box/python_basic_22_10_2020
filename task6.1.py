@@ -25,6 +25,8 @@ class TrafficLight:
                 elif i ==2:
                     sleep(10)
                 i+=1
+        else:
+            print('Светофор не исправен')
 
 
 a = TrafficLight()
