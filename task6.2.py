@@ -6,3 +6,12 @@
 Проверить работу метода.
 Например: 20м * 5000м * 25кг * 5см = 12500 т
 """
+
+
+class Road:
+    def __init__(self, _length, _width):
+        print("Строится дорога")
+        self._length = _length
+        self._width = _width
+
+
