@@ -9,3 +9,25 @@
 Подсказка: сложение элементов матриц выполнять поэлементно — первый элемент первой строки первой матрицы складываем с
 первым элементом первой строки второй матрицы и т.д.
 """
+
+
+class Matrix:
+
+    def __init__(self, list_of_lists):
+        self.list_of_lists = list_of_lists
+
+    def __str__(self):
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in self.list_of_lists])) #проходим по списку списсков, добаляя в начале каждого подсписка перенос строки и табуляцию между элементами
+
+    def __add__(self, matrix_2):
+        for i in range(len(self.list_of_lists)):
+            for j in range(len(matrix_2.list_of_lists[i])):
+               self.list_of_lists[i][j] = self.list_of_lists[i][j] + matrix_2.list_of_lists[i][j]
+        return Matrix.__str__(self)
+
+
+list1 = Matrix([[666, 777, 555],[111, 222, 333],[444, 888, 999]])
+list2 = Matrix([[111,111,111], [111, 111, 111],[111,111,111]])
+
+print(list1 + list2)
+
