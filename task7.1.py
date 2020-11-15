@@ -17,7 +17,8 @@ class Matrix:
         self.list_of_lists = list_of_lists
 
     def __str__(self):
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in self.list_of_lists])) #проходим по списку списсков, добаляя в начале каждого подсписка перенос строки и табуляцию между элементами
+        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in self.list_of_lists])) #проходим по списку списсков, добаляя в начале
+                                                                                            # каждого подсписка перенос строки и табуляцию между элементами
 
     def __add__(self, matrix_2):
         for i in range(len(self.list_of_lists)):
