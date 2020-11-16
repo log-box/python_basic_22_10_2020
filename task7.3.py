@@ -21,3 +21,61 @@
 Или, количество ячеек клетки равняется 15, количество ячеек в ряду — 5.
 Тогда метод make_order() вернет строку: *****\n*****\n*****.
 """
+
+class Cell:
+    sell_count = 0
+    def __init__(self, quantity):
+        self.quantity = int(quantity)
+        Cell.sell_count += 1
+        self.sell_count = Cell.sell_count
+
+    def __add__(self, other):
+        return f'Клетки слились, размер новой клетки стал равен: {self.quantity + other.quantity}'
+
+    def __sub__(self, other):
+        sub = self.quantity - other.quantity
+        if sub > 0:
+            return f'Клетки вычелись. Размер клетки изменился, он равен: {sub}'
+        else:
+            return 'Клетка будет поглощена, она исчезнет'
+
+    def __mul__(self, other):
+        return f'Клетки перемножились. Их стало: {self.quantity * other.quantity}'
+
+    def __truediv__(self, other):
+        return f'Клетки разделилсь до целой, клеток стало ровно: {self.quantity // other.quantity} '
+
+
+
+    def make_order(self, row):
+        result = ''
+        for i in range(int(self.quantity / row)):
+            result += '*' * row + '\n'
+        result += '*' * (self.quantity % row) + '\n'
+        return result
+
+
+cell = Cell(27)
+cell2 = Cell(2)
+cell3 = Cell(23)
+cell4 = Cell(24)
+cell5 = Cell(25)
+cell6 = Cell(26)
+
+print(cell + cell6)
+print(cell - cell4)
+print(cell / cell3)
+print(cell * cell5)
+print(f'=========Клетка:{cell.sell_count}=========')
+print(cell.make_order(26))
+print(f'=========Клетка:{cell2.sell_count}=========')
+print(cell2.make_order(2))
+print(f'=========Клетка:{cell3.sell_count}=========')
+print(cell3.make_order(6))
+print(f'=========Клетка:{cell4.sell_count}=========')
+print(cell4.make_order(26))
+print(f'=========Клетка:{cell5.sell_count}=========')
+print(cell5.make_order(4))
+print(f'=========Клетка:{cell6.sell_count}=========')
+print(cell6.make_order(9))
+print(f'За время эксперимента создано клеток: {Cell.sell_count}')

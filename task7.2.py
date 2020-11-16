@@ -16,14 +16,8 @@ class Clothes(ABC):
     def __init__(self, param):
         self.param = param
 
-
     def __add__(self, second):
         return f'Для пошива пальто и костюма нужно:{self.param / 6.5 + 0.5 + 2 * second.param + 0.3 :.2f} ткани'
-
-    @property
-    def consumption(self):
-
-        pass
 
     @abstractmethod
     def abstract(self):
@@ -31,6 +25,7 @@ class Clothes(ABC):
 
 
 class Coat(Clothes):
+    @property
     def consumption(self):
         return f'Для пошива пальто нужно: {self.param / 6.5 + 0.5 :.2f} ткани'
 
@@ -39,6 +34,7 @@ class Coat(Clothes):
 
 
 class Costume(Clothes):
+    @property
     def consumption(self):
         return f'Для пошива костюма нужно: {2 * self.param + 0.3 :.2f} ткани'
 
@@ -49,8 +45,8 @@ class Costume(Clothes):
 coat = Coat(666)
 costume = Costume(100)
 
-print(coat.consumption())
-print(costume.consumption())
+print(coat.consumption)
+print(costume.consumption)
 print(coat + costume)
 print(coat.abstract())
 print(costume.abstract())
