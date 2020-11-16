@@ -30,20 +30,20 @@ class Cell:
         self.sell_count = Cell.sell_count
 
     def __add__(self, other):
-        return f'Клетки слились, размер новой клетки стал равен: {self.quantity + other.quantity}'
+        return f'Клетки {self.sell_count} и {other.sell_count} слились, размер новой клетки стал равен: {self.quantity + other.quantity}'
 
     def __sub__(self, other):
         sub = self.quantity - other.quantity
         if sub > 0:
-            return f'Клетки вычелись. Размер клетки изменился, он равен: {sub}'
+            return f'Клетки {self.sell_count} и {other.sell_count} вычелись. Размер клетки изменился, он равен: {sub}'
         else:
             return 'Клетка будет поглощена, она исчезнет'
 
     def __mul__(self, other):
-        return f'Клетки перемножились. Их стало: {self.quantity * other.quantity}'
+        return f'Клетки {self.sell_count} и {other.sell_count} перемножились. Их стало: {self.quantity * other.quantity}'
 
     def __truediv__(self, other):
-        return f'Клетки разделилсь до целой, клеток стало ровно: {self.quantity // other.quantity} '
+        return f'Клетки {self.sell_count} и {other.sell_count} разделилсь до целой, клеток стало ровно: {self.quantity // other.quantity} '
 
 
 
