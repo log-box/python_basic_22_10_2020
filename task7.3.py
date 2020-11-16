@@ -36,8 +36,7 @@ class Cell:
         sub = self.quantity - other.quantity
         if sub > 0:
             return f'Клетки {self.sell_count} и {other.sell_count} вычелись. Размер клетки изменился, он равен: {sub}'
-        else:
-            return 'Клетка будет поглощена, она исчезнет'
+        raise ValueError('Размер клетки не может быть отрицательным')
 
     def __mul__(self, other):
         return f'Клетки {self.sell_count} и {other.sell_count} перемножились. Их стало: {self.quantity * other.quantity}'
