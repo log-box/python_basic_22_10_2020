@@ -14,3 +14,16 @@
 изученных на уроках по ООП.
 """
 
+
+class Storage:
+    __STORAGE = {
+        'Название': 'Склад ОРГТЕХНИКИ',
+
+    }
+
+class OfficeEquimp:
+    def __init__(self, manufactor: str, model: str, serial_number: str, price: int):
+
+
+
+
