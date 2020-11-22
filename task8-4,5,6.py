@@ -20,47 +20,57 @@
 class Storage:
     __STORAGE = {
         'Название': 'Склад ОРГТЕХНИКИ',
-        'Принтеры': {0: 0,
-                     },
-        'Сканеры': {0: 0,
-                    },
-        'Копиры': {0: 0,
-                   },
+        'Принтеры': [
+                    ],
+        'Сканеры': [
+                    ],
+        'Копиры': [
+                ]
+
     }
 
 class OfficeEquimp:
-    def __init__(self, manufactor: str, model: str, serial_number: str, price: int):
-        self.manufactor = manufactor
-        self.model = model
-        self.serial_number = serial_number
-        self.price = price
+    def __init__(self):
+        self.manufactor = ''
+        self.model = ''
+        self.serial_number = ''
+        self.price = 0
+        self.depart = ''
+    def adding_to_storage(self):
+        try:
+            self.manufactor = input(f'Введите производителя ')
+            self.model = input(f'Введите модель устройства ')
+            self.serial_number  = input(f'Введите серийный номер ')
+            self.price = int(input(f'Введите цену '))
+            device_parram = {'Производитель': self.manufactor, }
+
 
 class Printers(OfficeEquimp):
-    def __init__(self, manufactor:str, model: str, serial_number: str, price: int, type: str):
-        super().__init__(manufactor, model, serial_number, price)
-        self.manufactor = manufactor
-        self.model = model
-        self.serial_number = serial_number
-        self.price = price
-        self.type = type
+    def __init__(self):
+        super().__init__()
+        self.manufactor = ''
+        self.model = ''
+        self.serial_number = ''
+        self.price = 0
+        self.type = ''
 
 class Scaners(OfficeEquimp):
-    def __init__(self, manufactor: str, model: str, serial_number: str, price: int, dimension: str):
-        super().__init__(manufactor, model, serial_number, price)
-        self.manufactor = manufactor
-        self.model = model
-        self.serial_number = serial_number
-        self.price = price
-        self.dimension = dimension
+    def __init__(self):
+        super().__init__()
+        self.manufactor = ''
+        self.model = ''
+        self.serial_number = ''
+        self.price = 0
+        self.dimension = ''
 
 class Copyers(OfficeEquimp):
-    def __init__(self, manufactor: str, model: str, serial_number: str, price: int, color: str):
-        super().__init__(manufactor, model, serial_number, price)
-        self.manufactor = manufactor
-        self.model = model
-        self.serial_number = serial_number
-        self.price = price
-        self.color = color
+    def __init__(self):
+        super().__init__()
+        self.manufactor = ''
+        self.model = ''
+        self.serial_number = ''
+        self.price = 0
+        self.color = ''
 
 
 
